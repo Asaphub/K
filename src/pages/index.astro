@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
 import In from "../components/icons/LinkedIn.astro";
 import Card from "../components/Card.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Mail from "../components/icons/Mail.astro";
 ---
 
 <Layout title="Jonathan Fierro">
@@ -25,15 +29,29 @@ import Card from "../components/Card.astro";
 			</h1>
 
 			<h2 class="text-2xl text-wrap opacity-80 mano">
-				<span class="mora">Desarrollador de videojuegos indie,</span>  <span class="azul">tambien soy ingeniero en sistemas enfocado en redes y
-				servidores,</span> <span class="gold">proximo a certificarme como architect solutions
-				associate.</span>
+				<span class="mora">Desarrollador de videojuegos indie,</span>
+				<span class="azul"
+					>tambien soy ingeniero en sistemas enfocado en redes y
+					servidores,</span
+				>
+				<span class="gold"
+					>proximo a certificarme como architect solutions associate.</span
+				>
 			</h2>
-			<ul>
-				<a href="">
-					<In class="size-8" /> linkedin
-				</a>
-			</ul>
+			<nav class="flex gap-x-2 py-4">
+				<SocialPill href="https://www.linkedin.com/in/jonathan-fierro/">
+					<LinkedIn class="size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.linkedin.com/in/jonathan-fierro/">
+					<GitHub class="size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill  href="mailto:jonathanfierro.is@gmail.com">
+					<Mail class="size-6" />
+					jonathanfierro.is@gmail.com
+				</SocialPill>
+			</nav>
 		</section>
 	</main>
 </Layout>
