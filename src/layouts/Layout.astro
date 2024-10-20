@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Badge from "../components/Badge.astro";
 import "@fontsource/courier-prime";
 import "@fontsource/fuzzy-bubbles";
@@ -22,9 +23,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#434343_100%)]"></div>
+		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		
 		<Header />
 		<slot />
+		<Footer/>
 	</body>
 </html>
 <style is:global>
@@ -33,12 +36,19 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: "Pixelify Sans Variable", system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
 	body {
-		background: #050505;
+
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		hmtl {
+			scroll-behavior: auto;
+		}
 	}
 
 	.maquina {
@@ -47,20 +57,24 @@ const { title } = Astro.props;
 	.mano {
 		font-family: "Fuzzy Bubbles", cursive;
 	}
-	.red{
+	.red {
 		color: red;
 	}
-	.gold{
-		color: #D4AF37;
+	.gold {
+		color: #d4af37;
 	}
-	.mora{
-		color: #7952B3;
+	.mora {
+		color: #7952b3;
 	}
-	.azul{
-		color: #068FFF;
+	.azul {
+		color: #068fff;
 	}
 
-	.gri{
-		color: #EEEEEE;
+	.gri {
+		color: #eeeeee;
+	}
+
+	.amaz {
+		color: #ff9900;
 	}
 </style>

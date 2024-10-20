@@ -1,0 +1,38 @@
+---
+import type { ACTION_ERROR_CODES, ACTION_QUERY_PARAMS } from "astro:actions";
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Sysadmin en Grupo Miraro",
+        description:
+            "Responsable de todo lo que tenga que ver con tecnologia en Grupo Miraro, Me encantaa!",
+        link: "Learn more", 
+    },
+    {
+        date: "Febrero 2017 - Marzo 2022",
+        title: "Coordinador de TI en restaurantes en Grupo Andersons",
+        description:
+            "Me encargaba de que todo funcione en tema de POS en cuanto a sistemas para las unidades de negocio, Mi primera chambaaa! Mi tiempo en grupo andersosn fue muy bonito, conoci personas muy interesantes, Fue muy... delicioso!!",
+        link: null, // No hay enlace
+    },
+    {
+        date: "Desde Abril 2016",
+        title: "Desarrollador de videjuegos indie",
+        description:
+            "En estas fechas empece en este viaje del desarrollo indie, me gusta cada dia mas",
+        link: null, // No hay enlace
+    },
+];
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-6 gold">
+    {
+EXPERIENCE.map((experience) => (
+<li class="mb-10 ms-4">
+    <ExperienceItem {...experience}/>
+</li>
+
+))
+}
+</ol>
