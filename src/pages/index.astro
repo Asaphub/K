@@ -1,68 +1,51 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import In from "../components/icons/LinkedIn.astro";
-import Card from "../components/Card.astro";
-import SocialPill from "../components/SocialPill.astro";
-import LinkedIn from "../components/icons/LinkedIn.astro";
-import GitHub from "../components/icons/GitHub.astro";
-import Mail from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Job from "../components/icons/Job.astro";
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
 ---
 
-<Layout title="Jonathan Fierro">
-	<main>
-		<SectionContainer id="about" class="py-40 pb-20">
-			<img
-				class="rounded-full w-24 h-24 mb-6"
-				src="https://cdn.selvaescondida.mx/uploads/Jf_Dev_435ad4f6b6.png"
-				alt="Pixxel"
-			/>
-			<h1
-				class="text-white text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4 maquina gri"
-			>
-				Hola! Soy Jonathan Fierro.<a
-					href="https://www.linkedin.com/in/jonathan-fierro/"
-					class="flex justify-center items-center mano"
-				>
-					<Badge>No busco trabajo.</Badge>
-				</a>
-			</h1>
+<Layout
+  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
+  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </TitleSection>
+      <Experience />
+    </SectionContainer>
 
-			<h2 class="text-2xl text-wrap opacity-80 mano">
-				<span class="mora">Desarrollador de videojuegos indie,</span>
-				<span class="azul"
-					>tambien soy ingeniero en sistemas enfocado en redes y
-					servidores,</span
-				>
-				<span class="amaz"
-					>proximo a certificarme como architect solutions associate.</span
-				>
-			</h2>
-			<nav class="flex gap-x-6 py-4">
-				<SocialPill href="https://www.linkedin.com/in/jonathan-fierro/">
-					<LinkedIn class="size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://www.linkedin.com/in/jonathan-fierro/">
-					<GitHub class="size-6" />
-					GitHub
-				</SocialPill>
-				<SocialPill href="mailto:jonathanfierro.is@gmail.com">
-					<Mail class="size-6" />
-					jonathanfierro.is@gmail.com
-				</SocialPill>
-			</nav>
-		</SectionContainer>
+    <SectionContainer id="proyectos">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Proyectos
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
 
-		<SectionContainer id="experience" class="">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center gold">
-				<Job class="size-12 gold" />
-				Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
-	</main>
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
 </Layout>
